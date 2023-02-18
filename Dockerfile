@@ -1,5 +1,5 @@
 FROM python:bullseye
-COPY ../ .
+COPY . .
 RUN pip install dash
 RUN pip install pandas
 RUN pip install plotly
