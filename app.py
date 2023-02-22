@@ -53,28 +53,29 @@ fig2 = px.scatter(geo_df, x="FEATURE_AREA_SQM", y="C10_RATE_TOTAL",
 
 
 app.layout = html.Div(children=[
-    html.H1(children='Map Example'),
+    html.H1(children='Map Example', style={'textAlign': 'center'}),
 
     html.Div(children='''
         This is intended to show how we can add maps to containers.
-    '''),
+    ''', style={'textAlign': 'center'}),
 
     html.Div(children=[
         html.Label('Dropdown'),
         dcc.Dropdown(optionslist, 'C10_RATE_TOTAL',id='rateselector'),
-    ], style={'padding': 10, 'flex': 1, 'width':'15vw'}),
+    ], style={'padding': 10, 'flex': 1, 'width':'15vw','textAlign': 'center'}),
+    
 html.Div(children=[
     dcc.Graph(
         id='map',
         # figure=fig,
-        style={'width': '45vw', 'height': '90vh'}
+        style={'width': '45vw', 'height': '90vh','display': 'inline-block'}
     ),
 
     dcc.Graph(
         id='bubble graph',
         # figure=fig2,
-        style={'width': '45vw', 'height': '90vh'}
-    )],style={'display': 'block'}
+        style={'width': '45vw', 'height': '90vh','display': 'inline-block'}
+    )],style={'display': 'inline-block'}
 )
 ])
 
